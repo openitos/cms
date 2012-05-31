@@ -1,0 +1,32 @@
+<h1>/Article</h1>
+
+<p>
+  <b>Parent</b><br>
+  <%= @article.parent_id %>
+</p>
+
+<p>
+  <b>Lft</b><br>
+  <%= @article.lft %>
+</p>
+
+<p>
+  <b>Rgt</b><br>
+  <%= @article.rgt %>
+</p>
+
+<p>
+  <b>Depth</b><br>
+  <%= @article.depth %>
+</p>
+
+<p>
+  <b>Position</b><br>
+  <%= @article.position %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', articles_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_article_path(@article), :class => 'btn' %>
+  <%= link_to 'Delete', article_path(@article), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

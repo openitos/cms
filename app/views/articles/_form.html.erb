@@ -1,0 +1,42 @@
+<%= simple_form_for @article , html: { class: 'form-horizontal' } do |f| %>
+  <%= f.error_messages  %>
+  <%= f.input :name %>
+  <%= f.globalize_fields_for(:en) do |g| %>
+    <%= g.input :title%>
+    <%= g.input :summary, as: :text %>
+    <%= g.cktext_area :body, :toolbar => 'Full', :width => 800, :height => 400 %>
+  <% end %>  
+  <%= f.input :position %>
+  <div class="control-group">
+    
+    <label class="control-label">Parent</label>
+    <div class="controls">
+      <%= f.select :parent_id, nested_set_options(Article, @article) {|i| "#{'-' * i.level} #{i.title}" },
+                   :include_blank => true %>  
+    </div>
+  </div>
+  <a class="btn" data-toggle="modal" href="#grTrans" >Greek Translations</a>
+  <div class="modal hide fade page" id="grTrans">
+    <div class="modal-header">
+      <button class="close" data-dismiss="modal">×</button>
+      <h3>Greek Translation</h3>
+    </div>
+    <div class="modal-body">
+      <p>
+        <%= f.globalize_fields_for(:gr) do |g| %>
+          <%= g.input :title%>
+          <%= g.input :summary, as: :text %>
+          <%= g.cktext_area :body, :toolbar => 'Full', :width => 400, :height => 400 %>
+        <% end %>  
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn btn-primary" data-dismiss="modal">OK</a>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn-primary'  %>
+    <%= link_to "Cancel", articles_path, class: "btn" %>
+  </div>
+<% end %>
+
