@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  new_date: 2012-06-06
+  news_categories: 
+  important: false
+
+two:
+  name: MyString
+  new_date: 2012-06-06
+  news_categories: 
+  important: false

@@ -23,7 +23,7 @@
     </div>
     <div class="modal-body">
       <p>
-        <%= f.globalize_fields_for(:gr) do |g| %>
+        <%= f.globalize_fields_for(:el) do |g| %>
           <%= g.input :title%>
           <%= g.input :summary, as: :text %>
           <%= g.cktext_area :body, :toolbar => 'Full', :width => 400, :height => 400 %>

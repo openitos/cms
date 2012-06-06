@@ -1,0 +1,108 @@
+$siteMainColor: #7d0064;
+$footer-height: 200px;
+html, body{
+  height: 100%;
+  padding-top: 0;
+}
+
+h1, h2, h3, h4, h5{
+  color: $siteMainColor;
+}
+
+.topHeader{
+  padding: 10px 0;
+  background: $siteMainColor;
+  .date{
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+  .langDiv{
+    text-align: right;
+    .lang{
+      float: right;
+      list-style: none;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      li{
+        float: left;
+        padding-left: 15px;
+      }
+    }
+  }
+}
+.mainMenu{
+  @include border-radius(0px);
+  .container{
+    width: 940px;
+  }
+}
+.header{
+  .carousel{
+    margin-bottom: 0;
+    height: 80px;
+  }
+  .slogan{
+    font-family: 'Comfortaa', cursive;
+    position: relative;
+    height: 70px;
+    overflow: hidden;
+    margin-top: 10px;
+    .sg1{
+      font-size: 14pt;
+      color: #666;
+      position: absolute;
+      left: -350px;
+    }
+    .sg2{
+      font-size: 18pt;
+      color: #dda0dd;
+      position: absolute;
+      display: none;
+      top: 30px;
+    }
+  }
+
+  .search-query{
+    float: right;
+    margin-top: 30px;
+  }
+}
+.wrapper{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -200px; /* the bottom margin is the negative value of the footer's height */
+  //overflow: hidden;
+}
+.push{
+  height: 200px;
+  clear: both;
+}
+footer{
+  background: #222;
+  width: 100%;
+  color: #f1f1f1;
+  height: $footer-height;
+  overflow: hidden;
+  //padding-top: 178px;
+  h1, h2, h3, h4, h5{
+    color: #f1f1f1 !important;
+    padding-top: 20px;
+  }
+  ul.dateFooter, ul.contactFooter{
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+    list-style: none;
+    li{
+      color: #999;
+    }
+    li.copywright{
+      margin-top: 20px;
+      font-style: normal;
+    }
+  }
+}
+

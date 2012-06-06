@@ -1,0 +1,19 @@
+el:
+  home: "Αρχική"
+  date:
+    formats:
+      default: "%A,%d %B  %Y"
+  mainmenu:
+    home: "Αρχική"
+    about-us: "Η Εταιρία μας"
+    services: "Υπηρεσίες"
+    publications: "Δημοσιεύσεις"
+  address:
+    title: "Διεύθυνση"
+    str: "Ιπποκράτους 4"
+    city: "106 79 Αθήνα"
+    country: "Ελλάδα"
+  contact:
+    title: "Επικοινωνήστε μαζί μας"
+    tel: "Τηλ: +30 210 3613379"
+    fax: "Fax: +30 210 3612084"

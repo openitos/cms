@@ -3,13 +3,88 @@
 <head>
   <title>Cms</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>     <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "English", :locale=>'gr'%>
+<div class="wrapper">
+<div class="topHeader">
+  <div class="container">
+    <div class="row">
+      <div class="date span2">
+        <%= I18n.l Date.current %>
+      </div>
+      <div class="span10 langDiv">
+        <%= language_changer%>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= yield %>
+<div class="container">
+  <div class="row header">
+    <div class="span2">
+      <%= link_to image_tag("logonew.png"), root_path %>
+    </div>
+    <div class="span5 slogan">
+      <div class="sg1">European Legal Consultancy Law Firm</div>
+      <div class="sg2">Eurolegal</div> 
+    </div>
+    <div class="span5">
+      <div id="headerCarousel" class="carousel slide">
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="active item"><%= image_tag "topcycle/home.jpg"%></div>
+          <div class="item"><%= image_tag "topcycle/clients.jpg"%></div>
+          <div class="item"><%= image_tag "topcycle/gallery.jpg"%></div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
 
+<div class="navbar">
+  <div class="navbar-inner mainMenu">
+    <div class="container">
+      <%= render_navigation :renderer => :bootstrap %>
+      <%= form_tag root_path, :method => :get, class: "navbar-search pull-right" do %>
+        <%= text_field_tag :search, params[:search], class: "input-medium search-query", placeholder: "Search..." %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="span12 content">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  <div class="push"></div>
+</div>
+<footer class="">
+  <div class="container">
+    <div class="span2">
+      <h5><%= t "address.title" %></h5>
+      <ul class="dateFooter">
+        <li><%= t "address.str"%></li>
+        <li><%= t "address.city"%></li>
+        <li><%= t "address.country"%></li>
+        <li class="copywright">&copy; 2012 Eurolegal </li>
+      </ul> 
+    </div>
+    <div class="span3">
+      <h5><%= t "contact.title" %></h5>
+      <ul class="contactFooter">
+        <li><%= t "contact.tel"%></li>
+        <li><%= t "contact.fax"%></li>
+        <li><%= t "contact.mail"%></li>
+      </ul> 
+    </div>
+    <div class="span4">
+    </div>
+  </div>
+</footer>
 </body>
 </html>

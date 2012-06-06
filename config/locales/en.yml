@@ -1,5 +1,19 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  home: "home"
+  date:
+    formats:
+      default: "%A,%d %B  %Y"
+  mainmenu:
+    home: "home"
+    about-us: "about-us"
+    services: "services"
+    publications: "publications"
+  address:
+    title: "Office Address"
+    str: "Hippocratous Str 4"
+    city: "106 79 Athens"
+    country: "Greece"
+  contact:
+    title: "Contact us"
+    tel: "Τel: +30 210 3613379"
+    fax: "Fax: +30 210 3612084"
