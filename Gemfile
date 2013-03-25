@@ -5,11 +5,12 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'devise'
 gem 'cancan'
-gem 'twitter-bootstrap-rails'
-gem 'bourbon'
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
 gem 'simple_form'
 gem 'dynamic_form'
 gem 'friendly_id'
@@ -25,9 +26,15 @@ gem 'ransack'
 gem 'ckeditor'
 gem 'paperclip'
 gem 'rails-translate-routes'
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'bourbon'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 

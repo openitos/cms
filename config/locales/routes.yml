@@ -1,4 +1,6 @@
 en:
+  routes:
 gr:
-  home: arxikh
-  about: h-etairia
+  routes:
+    home: arxikh
+    about: h-etairia

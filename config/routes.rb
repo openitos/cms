@@ -1,6 +1,5 @@
 Cms::Application.routes.draw do
-
-  mount Ckeditor::Engine => '/ckeditor'
+  
   resources :articles
 
   resources :roles
@@ -11,4 +10,6 @@ Cms::Application.routes.draw do
 
   root :to => 'pages#home'
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml')
+  
+  mount Ckeditor::Engine => '/ckeditor'
 end

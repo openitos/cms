@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cms</title>
+  <title><%= page_title %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "English", :locale=>'gr'%>
-
-<%= yield %>
-
+<div class="container">
+	<header class="row">
+		<div class="span5" id ="title"><%= link_to "Ioannis-Andreas Philippas", root_path %></div>
+		<div class="span5">
+			<nav>
+				<ul class="nav nav-pills">
+                <li class="dropdown">
+					 <%=link_to "#menu1", class: "dropdown-toggle", "data-toggle" => "dropdown" do %>
+					 	<%= t :services, :default => 'Services' %>
+					   	<b class="caret"></b>
+					  <% end %>
+					  <ul class="dropdown-menu">
+					  		<li><%= link_to(t(:ror, :default => 'Ruby On Rails Development'), root_path)  %></li>
+					      <li><%= link_to(t(:php, :default => 'PHP Development'), root_path)  %></li>
+					      <li><%= link_to(t(:remote, :default => 'Remote Administration'), root_path)  %></li>
+					  </ul>
+					  </li>
+					  <li><%= link_to(t(:articles, :default => 'Articles'), "pages/about") %></li>
+					  <li><%= link_to(t(:about, :default => 'About me'), "pages/home") %></li>
+            </ul>
+			</nav>
+		</div>
+		<div class="span2">
+			<%= link_to(t(:contact, :default => 'Contact me'), "pages/home", class:"btn btn-primary") %>
+		</div>
+	</header>
+<div id="content" class="row">
+	<%= yield %>
+</div>
+	
+</div>
 </body>
 </html>
